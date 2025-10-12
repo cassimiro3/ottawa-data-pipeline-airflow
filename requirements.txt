@@ -1,0 +1,13 @@
+# Core dependencies
+apache-airflow==2.9.0
+boto3
+pandas
+mysql-connector-python
+pymongo
+elasticsearch
+python-dotenv
+requests
+
+# Dev / lint / test
+flake8
+pytest

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Logs
+logs/
+*.log
+
+# Data files
+data/**/*.csv
+data/**/*.parquet
+data/**/*.xlsx
+
+# Keep only sample raw data
+!data/raw/permits_ottawa.json
+
+# Airflow
+airflow/
+dags/__pycache__/
+*.airflow/
+airflow.db
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
