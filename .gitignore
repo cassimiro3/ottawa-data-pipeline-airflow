@@ -1,36 +1,83 @@
+# ================================
 # Python
+# ================================
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+*.egg
 *.pyo
 *.pyd
-*.egg-info/
-.env
 
 # Virtual environments
 .venv/
 venv/
 ENV/
 
-# Logs
+# ================================
+# Airflow
+# ================================
+airflow_home/
+airflow.db
+dags/__pycache__/
+*.airflow/
 logs/
 *.log
+.plugins/
+unittests.cfg
 
+# ================================
+# Docker / LocalStack
+# ================================
+.docker/
+localstack/
+**/localstack/
+**/.localstack/
+tmp/
+tmpfs/
+.env
+
+# ================================
 # Data files
+# ================================
+# Ignore Docker database volumes
+data/mysql/
+data/mongo/
+data/postgres/
+data/elasticsearch/
+data/**/WiredTiger*
+data/**/ibdata*
+data/**/binlog*
+data/**/mysql.sock
+
+# Ignore heavy data files
 data/**/*.csv
 data/**/*.parquet
 data/**/*.xlsx
+data/raw/permits_ottawa.json
 
-# Keep only sample raw data
-!data/raw/permits_ottawa.json
+# Keep only lightweight sample data
+!data/raw/sample_permits_ottawa.json
 
-# Airflow
-airflow/
-dags/__pycache__/
-*.airflow/
-airflow.db
-
-# IDE / System
+# ================================
+# IDE / OS
+# ================================
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+*.swp
+*.bak
+
+# ================================
+# Other generated or cache folders
+# ================================
+__pycache__/
+.cache/
+pytest_cache/
+.coverage
+*.pid
+
+# ================================
+# Jupyter notebooks (optional)
+# ================================
+.ipynb_checkpoints/

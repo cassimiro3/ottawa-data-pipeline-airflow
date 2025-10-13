@@ -53,9 +53,16 @@ Each step is implemented as a separate Airflow task:
 
 ## 📊 Dataset Overview
 
+The dataset used in this project was originally provided for educational purposes.
+It is derived from the Open Data Ottawa portal: [https://open.ottawa.ca](https://open.ottawa.ca).  
+
+For licensing reasons, the **full dataset is not redistributed** in this repository.  
+Instead, a small **sample file** (`data/raw/sample_permits_ottawa.json`) is included to allow local testing and demonstration of the pipeline.
+
+
 **Dataset:** Ottawa Building Permits (Open Data Ottawa)  
 **Format:** JSON (GeoJSON-like structure)  
-Each record represents a construction, demolition, or pool enclosure permit, with fields such as:
+Fields such as:
 - `PERMIT`, `APPL_TYPE`, `BLG_TYPE`, `VALUE`, `WARD`
 - `DESCRIPTION`, `ISSUED_DATE`, `LOCATION`, `GEO_POINT`
 
@@ -65,6 +72,4 @@ Each record represents a construction, demolition, or pool enclosure permit, wit
 
 **Adel Zairi**  
 Data Engineering student at **EFREI Paris**  
-📍 Building end-to-end Data Engineering pipelines integrating ETL, databases, and cloud orchestration tools.  
-💼 Project developed as part of the EFREI course *“Data Processing and Indexing” (May 2025).*
 
