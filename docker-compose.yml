@@ -9,6 +9,12 @@ x-airflow-common:
     - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
     - _PIP_ADDITIONAL_REQUIREMENTS=-r /opt/airflow/requirements.txt
+    # --- Added MongoDB environment variables ---
+    - MONGO_HOST=${MONGO_HOST:-mongo}
+    - MONGO_PORT=${MONGO_PORT:-27017}
+    - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE:-ottawa}
+    - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME:-root}
+    - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD:-example}
 
   volumes:
     - ./dags:/opt/airflow/dags

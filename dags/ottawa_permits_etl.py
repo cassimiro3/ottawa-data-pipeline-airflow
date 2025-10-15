@@ -22,8 +22,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from step1_raw_to_s3 import raw_to_s3 
 from step2_to_mysql import to_mysql
-# from step3_to_mongo import to_mongo
-# from step4_to_elastic import to_elastic
+from step3_to_mongo import to_mongo
+from step4_to_elastic import to_elastic
 # from step5_reporting import generate_report
 
 
@@ -63,18 +63,20 @@ with DAG(
     )
 
     # Step 3 – Curated → MongoDB
-    # curated_mongo_task = PythonOperator(
-    #     task_id="curated_mongo",
-    #     python_callable=to_mongo,
-    #     dag=dag,
-    # )
+    curated_mongo_task = PythonOperator(
+        task_id="curated_mongo",
+        python_callable=to_mongo,
+        dag=dag,
+    )
+
 
     # Step 4 – Index → Elasticsearch
-    # index_elasticsearch_task = PythonOperator(
-    #     task_id="index_elasticsearch",
-    #     python_callable=to_elastic,
-    #     dag=dag,
-    # )
+    index_elasticsearch_task = PythonOperator(
+        task_id="index_elasticsearch",
+        python_callable=to_elastic,
+        dag=dag,
+    )
+
 
     # Step 5 – Logging / Reporting
     # reporting_task = PythonOperator(
@@ -83,6 +85,8 @@ with DAG(
     #     dag=dag,
     # )
 
-    # Define dependencies
-    raw_to_s3_task >> staging_mysql_task
-    # >> curated_mongo_task >> index_elasticsearch_task >> reporting_task
+        
+    raw_to_s3_task >> staging_mysql_task >> curated_mongo_task >> index_elasticsearch_task
+    # >> reporting_task
+
+

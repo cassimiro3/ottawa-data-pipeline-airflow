@@ -1,8 +1,8 @@
-# 🏗️ Ottawa Data Pipeline (Airflow)
+#  Ottawa Data Pipeline (Airflow)
 
-🔗 Related Project: Ottawa MongoDB Exploration #ajouter le lien du repo
+ Related Project: Ottawa MongoDB Exploration #ajouter le lien du repo
 
-## 🎯 Objective
+## 🎯Objective
 
 This project implements a **complete data processing pipeline** inspired by EFREI’s “Data Processing and Indexing” synthesis exercise, adapted to the public dataset **Ottawa Building Permits**.
 
