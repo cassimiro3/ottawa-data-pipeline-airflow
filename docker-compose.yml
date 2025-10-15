@@ -8,13 +8,14 @@ x-airflow-common:
     - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
     - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
     - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
-    - _PIP_ADDITIONAL_REQUIREMENTS=
+    - _PIP_ADDITIONAL_REQUIREMENTS=-r /opt/airflow/requirements.txt
 
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./src:/opt/airflow/src
     - ./data:/opt/airflow/data
+    - ./requirements.txt:/opt/airflow/requirements.txt
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-0}"
   depends_on:
     - mysql
@@ -103,10 +104,10 @@ services:
       - DEBUG=1
     ports:
       - "${LOCALSTACK_PORT:-4566}:4566"
-    volumes:
-      - "./.docker/localstack:/var/lib/localstack"
-    tmpfs:
-      - /tmp/localstack
+    #volumes:
+    # - "./.docker/localstack:/var/lib/localstack"
+    #tmpfs:
+    #  - /tmp/localstack
 
 volumes:
   mysql:

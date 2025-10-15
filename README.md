@@ -23,6 +23,10 @@ Each step is implemented as a separate Airflow task:
 4. **MongoDB → Elasticsearch (Index)**: Index the enriched documents for fast search  
 5. **Reporting**: Generate a log file summarizing the processing pipeline
 
+One single Airflow DAG: ottawa_permits_etl.py
+Each step is a PythonOperator calling src/stepX_*.py
+
+
 ---
 
 ## ⚙️ Technologies

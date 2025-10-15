@@ -79,7 +79,7 @@ if "%STATUS%"=="healthy" (
     echo Airflow webserver is ready.
 ) else (
     echo Still waiting for Airflow webserver...
-    timeout /t 5 >nul
+    timeout /t 10 >nul
     goto wait_web
 )
 
