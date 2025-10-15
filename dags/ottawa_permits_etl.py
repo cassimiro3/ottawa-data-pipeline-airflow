@@ -24,7 +24,7 @@ from step1_raw_to_s3 import raw_to_s3
 from step2_to_mysql import to_mysql
 from step3_to_mongo import to_mongo
 from step4_to_elastic import to_elastic
-# from step5_reporting import generate_report
+from step5_reporting import generate_report
 
 
 # Default DAG arguments
@@ -79,14 +79,15 @@ with DAG(
 
 
     # Step 5 – Logging / Reporting
-    # reporting_task = PythonOperator(
-    #     task_id="reporting",
-    #     python_callable=generate_report,
-    #     dag=dag,
-    # )
+    reporting_task = PythonOperator(
+        task_id="reporting",
+        python_callable=generate_report,
+        dag=dag,
+    )
 
-        
-    raw_to_s3_task >> staging_mysql_task >> curated_mongo_task >> index_elasticsearch_task
-    # >> reporting_task
+
+
+    raw_to_s3_task >> staging_mysql_task >> curated_mongo_task >> index_elasticsearch_task >> reporting_task
+
 
 

@@ -1,0 +1,22 @@
+{
+    "timestamp": "2025-10-15T18:34:35.802010",
+    "data_zones": {
+        "Raw_S3": 1,
+        "Staging_MySQL": 86,
+        "Curated_MongoDB": 86,
+        "Index_Elasticsearch": 86
+    },
+    "analytics": {
+        "avg_permit_value": 412783.77,
+        "value_category_distribution": {
+            "High": 17,
+            "Low": 51,
+            "Medium": 18
+        },
+        "top_labels": [
+            "garage",
+            "pool",
+            "addition"
+        ]
+    }
+}
