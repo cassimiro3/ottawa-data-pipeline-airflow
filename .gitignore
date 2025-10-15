@@ -55,8 +55,8 @@ data/**/*.parquet
 data/**/*.xlsx
 data/raw/permits_ottawa.json
 
-# Keep only lightweight sample data
-!data/raw/sample_permits_ottawa.json
+# Keep only the raw data needed
+!data/raw/permits_ottawa.json
 
 # ================================
 # IDE / OS

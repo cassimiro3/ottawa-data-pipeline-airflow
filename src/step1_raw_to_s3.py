@@ -1,7 +1,7 @@
 """
 Step 1 of the Ottawa Permits ETL pipeline.
 
-Upload the raw dataset `sample_permits_ottawa.json`
+Upload the raw dataset `permits_ottawa.json`
 from the local folder `data/raw/` to an S3 bucket (LocalStack).
 
 Bucket: ottawa-raw
@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 # Environment variables
 LOCALSTACK_URL = os.getenv("LOCALSTACK_URL", "http://localstack:4566")
 BUCKET_NAME = os.getenv("S3_BUCKET_RAW", "ottawa-raw")
-RAW_FILE_PATH = os.getenv("RAW_FILE_PATH", "data/raw/sample_permits_ottawa.json")
+RAW_FILE_PATH = os.getenv("RAW_FILE_PATH", "data/raw/permits_ottawa.json")
 OBJECT_NAME = os.getenv("S3_OBJECT_NAME", "permits_ottawa.json")
 
 

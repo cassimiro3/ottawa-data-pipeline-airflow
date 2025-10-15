@@ -60,9 +60,6 @@ Each step is a PythonOperator calling src/stepX_*.py
 The dataset used in this project was originally provided for educational purposes.
 It is derived from the Open Data Ottawa portal: [https://open.ottawa.ca](https://open.ottawa.ca).  
 
-For licensing reasons, the **full dataset is not redistributed** in this repository.  
-Instead, a small **sample file** (`data/raw/sample_permits_ottawa.json`) is included to allow local testing and demonstration of the pipeline.
-
 
 **Dataset:** Ottawa Building Permits (Open Data Ottawa)  
 **Format:** JSON (GeoJSON-like structure)  

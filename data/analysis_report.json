@@ -1,22 +1,24 @@
 {
-    "timestamp": "2025-10-15T18:34:35.802010",
+    "timestamp": "2025-10-15T18:38:43.953131",
     "data_zones": {
         "Raw_S3": 1,
-        "Staging_MySQL": 86,
-        "Curated_MongoDB": 86,
-        "Index_Elasticsearch": 86
+        "Staging_MySQL": 23435,
+        "Curated_MongoDB": 23401,
+        "Index_Elasticsearch": 23401
     },
     "analytics": {
-        "avg_permit_value": 412783.77,
+        "avg_permit_value": 214853.32,
         "value_category_distribution": {
-            "High": 17,
-            "Low": 51,
-            "Medium": 18
+            "High": 7171,
+            "Low": 12446,
+            "Medium": 3784
         },
         "top_labels": [
             "garage",
             "pool",
-            "addition"
+            "basement",
+            "addition",
+            "rowhouse"
         ]
     }
 }
