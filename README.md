@@ -117,4 +117,5 @@ The pipeline generates:
 
 ## 9. Author
 Adel Zairi
+
 Data Engineering Major - EFREI Paris
